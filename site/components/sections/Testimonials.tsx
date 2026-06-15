@@ -5,12 +5,12 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { TESTIMONIALS } from "@/lib/content";
 
 const LOGO_PLACEHOLDERS = [
-  "חברת הייטק א'",
-  "רשת חינוכית",
-  "חברת סטארטאפ",
-  "עירייה",
-  "בית חולים",
-  "קבוצת נדל\"ן",
+  "חברות הייטק ",
+  "רשתות חינוכיות",
+  "חברות סטארטאפ",
+  "עיריות",
+  "בתי חולים",
+  "קבוצות נדל\"ן",
 ];
 
 export default function Testimonials() {
