@@ -68,6 +68,10 @@ export const metadata: Metadata = {
     canonical: "https://odt-leag.co.il",
   },
   metadataBase: new URL("https://odt-leag.co.il"),
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
