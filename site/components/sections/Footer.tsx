@@ -96,9 +96,6 @@ export default function Footer() {
           <p>
             © {year} {CONTACT.name} – סדנאות ODT. כל הזכויות שמורות.
           </p>
-          <p>
-            נבנה באהבה עם Next.js &amp; Tailwind
-          </p>
         </div>
       </div>
     </footer>
