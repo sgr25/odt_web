@@ -77,7 +77,7 @@ export default function PainAmplification() {
             מזהים את עצמכם? יש פתרון.
           </p>
           <a
-            href={`mailto:${CONTACT.email}`}
+            href="#contact-form"
             className="btn-primary"
           >
             דברו עם לאה עכשיו
