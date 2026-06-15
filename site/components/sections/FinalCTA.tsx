@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { CONTACT, FINAL_CTA } from "@/lib/content";
-import LeadForm from "@/components/LeadForm";
+import { FINAL_CTA } from "@/lib/content";
 
 export default function FinalCTA() {
   const ref = useRef(null);
@@ -47,30 +46,20 @@ export default function FinalCTA() {
           </p>
         </motion.div>
 
-        {/* Contact options */}
+        {/* CTA button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex justify-center"
         >
-          <a href={`mailto:${CONTACT.email}`} className="btn-primary text-base">
-            <span aria-hidden>✉️</span>
-            {FINAL_CTA.ctaSecondary}
+          <a
+            href="#contact-form"
+            className="btn-primary text-lg px-10 py-4"
+          >
+            בואו נתחיל
+            <span aria-hidden>←</span>
           </a>
-          <a href={CONTACT.phoneTel} className="btn-white text-base">
-            <span aria-hidden>📞</span>
-            {CONTACT.phone}
-          </a>
-        </motion.div>
-
-        {/* Lead form */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.35 }}
-        >
-          <LeadForm variant="dark" />
         </motion.div>
       </div>
     </section>
