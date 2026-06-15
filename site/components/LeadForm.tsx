@@ -234,7 +234,7 @@ export default function LeadForm({ variant = "inline" }: LeadFormProps) {
             )}
           </button>
 
-          /*<a
+          <a
             href={`mailto:${CONTACT.email}`}
             className={`flex items-center justify-center gap-2 px-5 py-3 rounded-full font-bold text-sm transition-all duration-300 ${
               isDark
@@ -245,7 +245,7 @@ export default function LeadForm({ variant = "inline" }: LeadFormProps) {
           >
             <span aria-hidden>✉️</span>
             מייל
-          </a>*/ 
+          </a>
         </div>
       </form>
     </div>
