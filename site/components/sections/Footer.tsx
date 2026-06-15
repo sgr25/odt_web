@@ -44,13 +44,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a
-                href={`mailto:${CONTACT.email}`}
-                className="flex items-center gap-2 text-white/70 hover:text-primary transition-colors"
-              >
-                <span aria-hidden>✉️</span>
-                מייל
-              </a>
+              
             </li>
             <li>
               <a
