@@ -234,6 +234,13 @@ export default function LeadForm({ variant = "inline" }: LeadFormProps) {
             )}
           </button>
 
+          <a
+            href={`mailto:${CONTACT.email}`}
+            className="btn-secondary flex-1 justify-center text-center"
+          >
+            <span aria-hidden>✉️</span>
+            ליצירת קשר במייל
+          </a>
         </div>
       </form>
     </div>
