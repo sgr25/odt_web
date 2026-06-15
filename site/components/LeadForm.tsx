@@ -234,18 +234,6 @@ export default function LeadForm({ variant = "inline" }: LeadFormProps) {
             )}
           </button>
 
-          <a
-            href={`mailto:${CONTACT.email}`}
-            className={`flex items-center justify-center gap-2 px-5 py-3 rounded-full font-bold text-sm transition-all duration-300 ${
-              isDark
-                ? "bg-white/10 text-white hover:bg-white/20 border border-white/20"
-                : "bg-primary/10 text-primary hover:bg-primary/20 border border-primary/20"
-            }`}
-            aria-label="שלח מייל"
-          >
-            <span aria-hidden>✉️</span>
-            מייל
-          </a>
         </div>
       </form>
     </div>
