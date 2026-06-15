@@ -1,13 +1,27 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import Image from "next/image";
 import { CONTACT, SOLUTION } from "@/lib/content";
 
 export default function Solution() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const images = SOLUTION.images as readonly string[];
+  const total = images.length;
+  const [active, setActive] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  const prev = () => {
+    setDirection(-1);
+    setActive((a) => (a - 1 + total) % total);
+  };
+  const next = () => {
+    setDirection(1);
+    setActive((a) => (a + 1) % total);
+  };
 
   return (
     <section
@@ -26,16 +40,66 @@ export default function Solution() {
             className="flex justify-center"
           >
             <div className="relative">
-              {/* Photo placeholder */}
-              <div className="w-72 h-80 sm:w-80 sm:h-96 rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-brand-gray to-brand-beige flex flex-col items-center justify-center gap-4 border-4 border-white">
-                <div className="text-7xl">👩‍🏫</div>
-                <div className="text-center px-6">
-                  <p className="font-bold text-navy text-xl">{CONTACT.name}</p>
-                  <p className="text-secondary font-medium text-sm mt-1">{CONTACT.title}</p>
-                  <p className="text-xs text-gray-500 mt-2">
-                    ניתן לשלוח תמונה מקצועית<br />להחלפה כאן
-                  </p>
-                </div>
+              {/* Photo carousel */}
+              <div className="relative w-72 h-80 sm:w-80 sm:h-96 rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
+                <AnimatePresence initial={false} custom={direction}>
+                  <motion.div
+                    key={active}
+                    custom={direction}
+                    variants={{
+                      enter: (d: number) => ({ x: d > 0 ? "100%" : "-100%", opacity: 0 }),
+                      center: { x: 0, opacity: 1 },
+                      exit: (d: number) => ({ x: d > 0 ? "-100%" : "100%", opacity: 0 }),
+                    }}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={images[active]}
+                      alt={`תמונה ${active + 1} של ${CONTACT.name}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 288px, 320px"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Arrow buttons */}
+                {total > 1 && (
+                  <>
+                    <button
+                      onClick={prev}
+                      aria-label="תמונה קודמת"
+                      className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-navy rounded-full w-8 h-8 flex items-center justify-center shadow opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      ‹
+                    </button>
+                    <button
+                      onClick={next}
+                      aria-label="תמונה הבאה"
+                      className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-navy rounded-full w-8 h-8 flex items-center justify-center shadow opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      ›
+                    </button>
+                  </>
+                )}
+
+                {/* Dot indicators */}
+                {total > 1 && (
+                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                    {images.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => { setDirection(i > active ? 1 : -1); setActive(i); }}
+                        aria-label={`תמונה ${i + 1}`}
+                        className={`w-2 h-2 rounded-full transition-all ${i === active ? "bg-white scale-125" : "bg-white/50"}`}
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Floating credential card */}

@@ -108,6 +108,13 @@ export const SOLUTION = {
   ],
   quote:
     "\"הצוות שלך לא צריך עוד מידע — הוא צריך חוויה משותפת שתשנה את האופן שבו אנשים רואים אחד את השני.\"",
+  images: [
+    "/brand/leah-1.jpeg",
+    "/brand/leah-2.png",
+    "/brand/leah-3.jpeg",
+    "/brand/leah-4.png",
+    "/brand/leah-5.JPG",
+  ],
 } as const;
 
 // ─── SERVICES ────────────────────────────────────────────────────────────────
