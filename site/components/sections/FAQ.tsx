@@ -91,7 +91,7 @@ export default function FAQSection() {
             עוד לא מצאתם תשובה?
           </p>
           <p className="text-gray-600 mb-6">
-            לאה תשמח לענות על כל שאלה — בלי מחויבות.
+            לאה תשמח לענות על כל שאלה!
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a href={`mailto:${CONTACT.email}`} className="btn-primary">
