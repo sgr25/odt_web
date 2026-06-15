@@ -34,7 +34,8 @@ export default function StickyHeader() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -80, opacity: 0 }}
           transition={{ duration: 0.35, ease: "easeOut" as const }}
-          className="fixed top-0 right-0 left-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm"
+          className="fixed top-0 right-0 left-0 z-40 backdrop-blur-md border-b border-[#a8bfcc] shadow-sm"
+          style={{ backgroundColor: "#c2d4df" }}
           role="banner"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between gap-4">
