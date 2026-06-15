@@ -230,7 +230,7 @@ export const RESULTS = {
   title: "מספרים שמדברים",
   subtitle: "תוצאות אמיתיות מארגונים אמיתיים",
   stats: [
-    { value: 150, suffix: "+", label: "סדנאות הועברו" },
+    { value: 100, suffix: "+", label: "סדנאות הועברו" },
     { value: 98, suffix: "%", label: "שביעות רצון" },
     { value: 80, suffix: "+", label: "ארגונים ומוסדות" },
     { value: 70, suffix: "%", label: "לקוחות חוזרים" },
