@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CONTACT } from "@/lib/content";
 
 export default function Footer() {
@@ -12,8 +13,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {/* Brand */}
         <div>
-          <div className="text-2xl font-black mb-1 text-gradient-orange">
-            {CONTACT.name}
+          <div className="mb-3">
+            <Image
+              src="/brand/לוגו ליקי.png"
+              alt="לאה גרינברג ODT"
+              width={130}
+              height={44}
+              className="h-11 w-auto object-contain brightness-0 invert"
+            />
           </div>
           <p className="text-white/60 text-sm mb-4">{CONTACT.title}</p>
           <p className="text-white/70 text-sm leading-relaxed max-w-xs">

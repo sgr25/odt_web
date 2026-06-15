@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { CONTACT } from "@/lib/content";
 
 export default function StickyHeader() {
@@ -37,13 +38,16 @@ export default function StickyHeader() {
           role="banner"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between gap-4">
-            {/* Logo / Name */}
-            <a
-              href="#hero"
-              className="font-black text-lg text-navy whitespace-nowrap hover:text-primary transition-colors"
-            >
-              לאה גרינברג
-              <span className="text-primary mr-1"> | ODT</span>
+            {/* Logo */}
+            <a href="#hero" aria-label="לאה גרינברג ODT - חזרה לראש הדף">
+              <Image
+                src="/brand/לוגו ליקי.png"
+                alt="לאה גרינברג ODT"
+                width={120}
+                height={40}
+                priority
+                className="h-10 w-auto object-contain"
+              />
             </a>
 
             {/* Desktop nav */}
