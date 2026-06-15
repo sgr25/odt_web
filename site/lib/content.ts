@@ -15,7 +15,6 @@ export const HERO = {
   cta: "תיאום שיחת ייעוץ",
   ctaSecondary: "גלו איך זה עובד",
   trustBadges: [
-    { label: "מעל 100 סדנאות", icon: "🏆" },
     { label: "ארגונים מובילים", icon: "🏢" },
     { label: "התאמה אישית", icon: "✨" },
     { label: "תוצאות מוכחות", icon: "📈" },
