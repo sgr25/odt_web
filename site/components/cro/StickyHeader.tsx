@@ -44,10 +44,10 @@ export default function StickyHeader() {
               <Image
                 src="/brand/לוגו ליקי.png"
                 alt="לאה גרינברג ODT"
-                width={120}
-                height={40}
+                width={168}
+                height={56}
                 priority
-                className="h-10 w-auto object-contain"
+                className="h-14 w-auto object-contain"
               />
             </a>
 
